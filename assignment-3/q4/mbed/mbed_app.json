@@ -1,0 +1,29 @@
+{
+    "config": {
+        "main-stack-size": {
+            "value": 8192,
+            "help": "Stack size for main thread (8KB)"
+        },
+        "heap-size": {
+            "value": 16384,
+            "help": "Heap size (16KB)"
+        }
+    },
+    "target_overrides": {
+        "*": {
+            "platform.stdio-baud-rate": 115200,
+            "platform.stdio-buffered-serial": true,
+            "platform.minimal-printf-enable-floating-point": true,
+            "platform.minimal-printf-set-floating-point-max-decimals": 2,
+            "platform.default-serial-baud-rate": 115200,
+            "platform.stdio-convert-newlines": true,
+            "target.c_lib": "std",
+            "target.printf_lib": "std",
+            "target.features_add": ["STORAGE"]
+        }
+    },
+    "macros": [
+        "MBED_CONF_PLATFORM_STDIO_CONVERT_NEWLINES=1",
+        "_GLIBCXX_USE_C99=1"
+    ]
+}
